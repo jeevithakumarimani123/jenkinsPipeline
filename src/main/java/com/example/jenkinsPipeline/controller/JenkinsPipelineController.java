@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.jenkinsPipeline.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.DemoApplication;
+import com.example.jenkinsPipeline.JenkinsPipelineApplication;
 
 @RestController
 @RequestMapping("/demoJen")
