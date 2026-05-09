@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkinspipeline
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkinspipeline
+  template:
+    metadata:
+      labels:
+        app: jenkinspipeline
+    spec:
+      containers:
+      - name: jenkinspipeline
+        image: jeevidockertest/jenkinspipeline:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkinspipeline
+spec:
+  type: LoadBalancer
+  selector:
+    app: jenkinspipeline
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 30080
